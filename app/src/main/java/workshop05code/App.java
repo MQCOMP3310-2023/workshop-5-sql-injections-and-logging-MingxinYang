@@ -72,10 +72,14 @@ public class App {
         try (Scanner scanner = new Scanner(System.in)) {
             System.out.print("Enter a 4 letter word for a guess or q to quit: ");
             String guess = scanner.nextLine();
-
+           
             while (!guess.equals("q")) {
+                if (!guess.matches("^[a-z]{4}$")) {
+                    System.out.println("Invalid input. Please enter a 4 letter word consisting only of lowercase letters a-z.");
+                    // skip to next iteration of the loop
+                }
                 System.out.println("You've guessed '" + guess+"'.");
-
+                
                 if (wordleDatabaseConnection.isValidWord(guess)) { 
                     System.out.println("Success! It is in the the list.\n");
                 }else{
