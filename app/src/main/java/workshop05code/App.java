@@ -76,7 +76,6 @@ public class App {
             while (!guess.equals("q")) {
                 if (!guess.matches("^[a-z]{4}$")) {
                     System.out.println("Invalid input. Please enter a 4 letter word consisting only of lowercase letters a-z.");
-                    // skip to next iteration of the loop
                 }
                 System.out.println("You've guessed '" + guess+"'.");
                 
